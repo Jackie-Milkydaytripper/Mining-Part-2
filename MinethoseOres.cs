@@ -2,59 +2,98 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MinethoseOres : MonoBehaviour
-{
-    int BronzeSupply;
+public class MinethoseOres : MonoBehaviour {
+    public int BronzeSupply;
     int BronzePlayer;
-    int SilverSupply;
+    public int SilverSupply;
     int SilverPlayer;
-    int MineSpeed;
+	static int Scoring;
+    public int MineSpeed;
     int Minetime;
 	int time;
-	bool printedMessage = false;
+	int xPosition;
 
-    public GameObject Sphere;
+	Vector3 cubePosition;
+	public GameObject CubePrefab;
+	public GameObject CubePrefab2;
+	public GameObject currentCube;
+
+    public int Time
+    {
+        get
+        {
+            return time;
+        }
+
+        set
+        {
+            time = value;
+        }
+    }
 
 
     // Use this for initialization
-	void Start() {
-		print ("Start");
-		printedMessage = false;
+    void Start() {
+		
         BronzePlayer = 0;
         SilverPlayer = 0;
-        BronzeSupply = 3;
-        SilverSupply = 3;
+        BronzeSupply = 2;
+        SilverSupply = 1;
         MineSpeed = 3;
-        Minetime = 3;
+        Minetime = 1;
+		print ("You currently have " + BronzePlayer +  "Bronze ores and " + SilverPlayer + " Silver Ores ");
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-		if (Time.time > 3 && printedMessage == false) {
-			print ("It has been three seconds!"); 
-			printedMessage = true;
 
-		}
-
-		if (Time.time > Minetime) {
+		if (UnityEngine.Time.time > Minetime) {
 			{
 
-				if (BronzeSupply > 0) {
-					BronzeSupply -= 1;
-					BronzePlayer += 1;
+				if (BronzeSupply >= 0) {
+                    BronzeSupply -= 1;
+                    BronzePlayer += 1; 
+
+					cubePosition = new Vector3 (Random.Range(-5, 4), Random.Range(-5, 9),0);
+					currentCube = Instantiate (CubePrefab, cubePosition, Quaternion.identity);
+					// I have to remember to spell quaternion correctly. Kept screaming at me to add a Transformation int...lol
+					xPosition += 2;
+
+					currentCube.GetComponent<Renderer> ().material.color = Color.white;
+
+
 				}
 
-				if (BronzeSupply == 0 && SilverSupply > 0) {
-					SilverSupply -= 1;
-					SilverPlayer += 1;
+			
 				}
+
+				if (BronzePlayer >= 3) {
+                    SilverSupply -= 1;
+                    SilverPlayer += 1;
+				    
+				cubePosition = new Vector3 (Random.Range(-3, 5), Random.Range(-2, 6),0);
+				currentCube = Instantiate (CubePrefab2, cubePosition, Quaternion.identity);
+				xPosition += 2;
+
+				currentCube.GetComponent<Renderer> ().material.color = Color.white;
+
+				}
+
+					
 
 				{
 
-					print ("Bronze: " + BronzePlayer + " ...and Silver: " + SilverPlayer);
+					print ("Bronze: " + BronzePlayer + " ...Silver: " + SilverPlayer);
+
+			Minetime += MineSpeed;
+				}
+					
+
+                    {
+
+                    }
 				}    
 			}   
-		}
-	}    
-}
+		}    
