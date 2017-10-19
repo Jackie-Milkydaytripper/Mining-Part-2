@@ -7,6 +7,8 @@ public class MinethoseOres : MonoBehaviour {
     int BronzePlayer;
     public int SilverSupply;
     int SilverPlayer;
+	public int GoldSupply;
+	int GoldPlayer;
 	static int Scoring;
     public int MineSpeed;
     int Minetime;
@@ -16,9 +18,11 @@ public class MinethoseOres : MonoBehaviour {
 	Vector3 cubePosition;
 	public GameObject CubePrefab;
 	public GameObject CubePrefab2;
+	public GameObject CubePrefabulous3;
 	public GameObject currentCube;
 
-    public int Time
+
+	public int Time
     {
         get
         {
@@ -41,6 +45,7 @@ public class MinethoseOres : MonoBehaviour {
         SilverSupply = 1;
         MineSpeed = 3;
         Minetime = 1;
+		GoldPlayer = 0;
 		print ("You currently have " + BronzePlayer +  "Bronze ores and " + SilverPlayer + " Silver Ores ");
        
     }
@@ -80,10 +85,17 @@ public class MinethoseOres : MonoBehaviour {
 				currentCube.GetComponent<Renderer> ().material.color = Color.white;
 
 				}
+				
+			/// I wasn't able to create code for the gold to instantiate correctly. 
+			if (BronzePlayer == 2 && SilverPlayer == 2) {
+				currentCube = Instantiate (CubePrefabulous3, new Vector3 (Random.Range (-5, 5), Random.Range (-5, 5), 0), Quaternion.identity);
+				currentCube.GetComponent<Renderer> ().material.color = Color.yellow;
+				xPosition += 2;
 
-					
+				GoldPlayer += 1;
 
-				{
+
+			}
 
 					print ("Bronze: " + BronzePlayer + " ...Silver: " + SilverPlayer);
 
@@ -96,4 +108,3 @@ public class MinethoseOres : MonoBehaviour {
                     }
 				}    
 			}   
-		}    

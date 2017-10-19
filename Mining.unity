@@ -205,6 +205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BronzeSupply: 0
   SilverSupply: 0
+  GoldSupply: 0
   MineSpeed: 0
   CubePrefab: {fileID: 0}
   CubePrefab2: {fileID: 0}
@@ -223,11 +224,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BronzeSupply: 0
   SilverSupply: 0
+  GoldSupply: 0
   MineSpeed: 0
   CubePrefab: {fileID: 1307090597557560, guid: 087fc3fb91ad3f74697319ee845edbf7, type: 2}
   CubePrefab2: {fileID: 1307090597557560, guid: 8550ac3bcc4c99f439c28ded21627ef7,
     type: 2}
-  CubePrefabulous3: {fileID: 1307090597557560, guid: 9e9dd483448d3f146a4085e967ae3fb1,
+  CubePrefabulous3: {fileID: 1307090597557560, guid: 0db3eea66bb28734caf3b5bb8fe9c5cd,
     type: 2}
   currentCube: {fileID: 0}
 --- !u!1 &301630372
@@ -279,7 +281,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.9338235, g: 0.6523032, b: 0.86781186, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -288,7 +290,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 104
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -313,7 +315,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 301630372}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0.4, y: 1, z: -14.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -427,11 +429,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BronzeSupply: 0
   SilverSupply: 0
+  GoldSupply: 0
   MineSpeed: 0
   CubePrefab: {fileID: 1307090597557560, guid: 087fc3fb91ad3f74697319ee845edbf7, type: 2}
   CubePrefab2: {fileID: 1307090597557560, guid: 8550ac3bcc4c99f439c28ded21627ef7,
     type: 2}
-  CubePrefabulous3: {fileID: 1307090597557560, guid: 9e9dd483448d3f146a4085e967ae3fb1,
+  CubePrefabulous3: {fileID: 1307090597557560, guid: 0db3eea66bb28734caf3b5bb8fe9c5cd,
     type: 2}
   currentCube: {fileID: 237113506}
 --- !u!114 &2078580844
@@ -447,10 +450,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BronzeSupply: 0
   SilverSupply: 0
+  GoldSupply: 0
   MineSpeed: 0
   CubePrefab: {fileID: 1307090597557560, guid: 087fc3fb91ad3f74697319ee845edbf7, type: 2}
   CubePrefab2: {fileID: 1307090597557560, guid: 8550ac3bcc4c99f439c28ded21627ef7,
     type: 2}
-  CubePrefabulous3: {fileID: 1307090597557560, guid: 9e9dd483448d3f146a4085e967ae3fb1,
+  CubePrefabulous3: {fileID: 1307090597557560, guid: 0db3eea66bb28734caf3b5bb8fe9c5cd,
     type: 2}
   currentCube: {fileID: 237113506}
